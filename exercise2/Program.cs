@@ -60,7 +60,60 @@ namespace exercise2
                 a[RA + 1] = temp;
             }
         }
-        
+        public void MergeSort(int l, int m, int h)
+        {
+            int i, j, k;
+            int L = m - l, H = h - m + 1;
+            int[] left = new int[L];
+            int[] right = new int[H];
+            for (i = 0; i < L; i++)
+            {
+                left[i] = a[l + i];
+            }
+            for (i = 0; i < H; i++)
+            {
+                right[i] = a[m + i];
+            }
+            i = 0;
+            j = 0;
+            k = l;
+            while (i < L && j < H)
+            {
+                if (left[i] <= right[j])
+                {
+                    a[k++] = left[i++];
+                }
+                else
+                {
+                    a[k++] = right[j++];
+                }
+            }
+            if (i == L)
+            {
+                for (int ii = j; ii < L; ii++)
+                {
+                    a[k++] = right[ii];
+                }
+            }
+            if (i == H)
+            {
+                for (int ii = i; ii < H; ii++)
+                {
+                    a[k++] = left[ii];
+                }
+            }
+        }
+        int getsize()
+        {
+            return (n);
+        }
+        public void tampilarray()
+        {
+            for (int i = 0; i < a.Length; i++)
+            {
+                Console.WriteLine(a[i]);
+            }
+        }
         static void Main(string[] args)
         {
 
