@@ -14,13 +14,13 @@ namespace exercise2
         {
             while (true)
             {
-                Console.WriteLine("Masukkan banyak elemen pada array");
+                Console.Write("Masukkan banyak elemen pada array : ");
                 string s = Console.ReadLine();
                 n = Int32.Parse(s);
                 if (n <= 27)
                     break;
                 else
-                    Console.WriteLine("\nArray maksimal 20 elemen.\n");
+                    Console.WriteLine("\nArray maksimal 27 elemen.\n");
             }
             Console.WriteLine("");
             Console.WriteLine("Masukkan Element Array");
@@ -33,8 +33,37 @@ namespace exercise2
                 a[i] = Int32.Parse(s1);
             }
         }
+        
+        public void display()
+        {
+            Console.WriteLine("");
+            Console.WriteLine("----------------------------");
+            Console.WriteLine("Element Array Telah Tersusun");
+            Console.WriteLine("----------------------------");
+            for (int RA = 0; RA < n; RA++)
+            {
+                Console.WriteLine(a[RA]);
+            }
+            Console.WriteLine();
+        }
+        public void InsertionSort()
+        {
+            for (int i = 0; i < n; i++)
+            {
+                int temp = a[i];
+                int RA = i - 1;
+                while(RA>=0 && a[RA] > temp)
+                {
+                    a[RA - 1] = a[RA];
+                    RA--;
+                }
+                a[RA + 1] = temp;
+            }
+        }
+        
         static void Main(string[] args)
         {
+
         }
     }
 }
