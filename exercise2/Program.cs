@@ -116,7 +116,11 @@ namespace exercise2
         }
         static void Main(string[] args)
         {
-
+            Program exercise2 = new Program();
+            exercise2.read();
+            exercise2.MergeSort(0, 4, exercise2.getsize() - 1);
+            exercise2.display();
+            Console.Read();
         }
     }
 }
